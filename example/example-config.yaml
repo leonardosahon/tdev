@@ -1,0 +1,27 @@
+# Session Name
+name: session_name
+# Wroking directory
+root: ~/apps/my-awesome-app
+windows:
+  # Home window
+  - name: 
+    path: .
+
+    # backend window
+  - name: 
+    path: apps/api
+    cmd: vim .
+
+    # front end window
+  - name: 
+    path: apps/web
+    cmd: vim .
+
+    # live server
+  - name: 
+    panes:
+      - path: apps/web
+        cmd: pnpm dev
+
+      - path: apps/api
+        cmd: air
