@@ -77,7 +77,11 @@ func cmd(name string, arg ...string) *exec.Cmd {
 		}
 	}
 
-	return exec.Command(name, arg...)
+	cmd := exec.Command(name, arg...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	return cmd
 }
 
 func runSession(name string) {
